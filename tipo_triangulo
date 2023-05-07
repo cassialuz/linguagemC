@@ -4,7 +4,10 @@ int main(){
 	
 	int lado1,lado2,lado3;
 	
-  //
+	//código 131 da tabela ASCII corresponde ao caractere â
+	//código 130 da tabela ASCII corresponde ao caractere é
+	//código 160 da tabela ASCII corresponde ao caractere á
+	//código 162 da tabela ASCII corresponde ao caractere ó
 	
 	printf("Digite o primeiro valor do tri%cngulo:\n",131);
 	scanf("%d",&lado1);
