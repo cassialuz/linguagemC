@@ -15,6 +15,5 @@ int main(){
 	
 	printf("O tempo em horas:%.2f\n",hora);
 	printf("O tempo em minutos:%.2f\n",minuto);
-	
-		
+			
 }
