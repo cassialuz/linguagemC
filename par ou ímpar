@@ -1,11 +1,13 @@
 #include <stdio.h>
 
 int main(){
-	//Exercicios de Linguagem C: CEFET-PR
-	//Verificar se o número é par ou ímpar
-  //código 163 da tabela ASCII corresponde ao caractere ú
-  //código 130 da tabela ASCII corresponde ao caractere é
-  //código 161 da tabela ASCII corresponde ao caractere í
+	
+//Exercicios de Linguagem C: CEFET-PR
+//Verificar se o número é par ou ímpar
+
+//código 163 da tabela ASCII corresponde ao caractere ú
+//código 130 da tabela ASCII corresponde ao caractere é
+//código 161 da tabela ASCII corresponde ao caractere í
 	
 	int num;
 	
