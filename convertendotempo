@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+	
+	//Exercicios de Linguagem C: CEFET-PR
+	//Converter tempo de segundos para horas e minutos.
+	
+	float segundo, minuto, hora;
+	
+	printf("Digite o tempo em segundos:\n");
+	scanf("%f",&segundo);
+	
+	hora = segundo/3600; //de segundos para horas
+	minuto = segundo/60; //de segundos para minutos
+	
+	printf("O tempo em horas:%.2f\n",hora);
+	printf("O tempo em minutos:%.2f\n",minuto);
+	
+		
+}
