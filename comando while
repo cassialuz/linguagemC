@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(){
+	
+	int num;
+	
+  //Código 163 da tabela ASCII corresponde ao caractere ú.
+  
+	printf("Digite um n%cmero entre 1 e 20:",163);
+	scanf("%d",&num);
+	
+	while(num >=1 && num <=20){
+		printf("num: %d\n",num);
+		num++;
+	}
+}
