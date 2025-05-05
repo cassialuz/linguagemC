@@ -1,0 +1,127 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_ALUNOS 100
+
+//Aluna: Cássia Domingos
+//disciplina: Estrutura de dados
+
+
+// Definindo a estrutura do aluno
+struct ALUNOS {
+    char nome[50];
+    int mat;
+    double g1, g2;
+};
+
+int main() {
+    struct ALUNOS alunos[MAX_ALUNOS]; //Vetor Alunos
+    int total = 0; //Total alunos cadastrados
+    int opcao;
+    int i;
+    int matricula;
+    int encontrado;
+
+    do {
+        //Menu
+        printf("\nMenu - Sistema Escola\n");
+        printf("============================\n");
+        printf("1 - Cadastrar aluno\n");
+        printf("2 - Pesquisar aluno\n");
+        printf("3 - Remover aluno\n");
+        printf("4 - Listar todos os alunos\n");
+        printf("0 - Sair\n");
+         printf("============================\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+
+        if (opcao == 1) {
+            // cadastrar novo aluno
+            if (total < MAX_ALUNOS) {
+                printf("Digite o nome do aluno: ");
+                getchar(); 
+                
+                fgets(alunos[total].nome, 50, stdin);
+                alunos[total].nome[strcspn(alunos[total].nome, "\n")] = 0; 
+
+                printf("Digite a matricula: ");
+                scanf("%d", &alunos[total].mat);
+
+                printf("Digite a nota G1: ");
+                scanf("%lf", &alunos[total].g1);
+
+                printf("Digite a nota G2: ");
+                scanf("%lf", &alunos[total].g2);
+
+                total++;
+                printf("Aluno cadastrado com sucesso!\n");
+            } else {
+                printf("Limite de alunos atingido!\n");
+            }
+
+        } else if (opcao == 2) {
+            //Pesquisar aluno pela matricula
+            printf("Digite a matricula para buscar: ");
+            scanf("%d", &matricula);
+
+            encontrado = 0;
+            for (i = 0; i < total; i++) {
+                if (alunos[i].mat == matricula) {
+                    printf("Nome: %s\n", alunos[i].nome);
+                    printf("Nota G1: %.2f\n", alunos[i].g1);
+                    printf("Nota G2: %.2f\n", alunos[i].g2);
+                    encontrado = 1;
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                printf("Aluno nao encontrado.\n");
+            }
+
+        } else if (opcao == 3) {
+            //remover aluno pela matrícula
+            printf("Digite a matricula para remover aluno: ");
+            scanf("%d", &matricula);
+
+            encontrado = 0;
+            for (i = 0; i < total; i++) {
+                if (alunos[i].mat == matricula) {
+                    //Move os próximos alunos pra trás
+                    for  (int j = i; j < total - 1; j++) {
+                        alunos[j] = alunos[j + 1];
+                    }
+                    total--;
+                    encontrado = 1;
+                    printf("Aluno removido com sucesso.\n");
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                printf("Aluno nao encontrado.\n");
+            }
+
+        } else if (opcao == 4) {
+            //lista todos os alunos
+            if (total == 0) {
+                printf("Nenhum aluno cadastrado.\n");
+            } else {
+                for (i = 0; i < total; i++) {
+                    printf("Aluno %d:\n", i + 1);
+                    printf("Nome: %s\n", alunos[i].nome);
+                    printf("Matricula: %d\n", alunos[i].mat);
+                    printf("G1: %.2f\n", alunos[i].g1);
+                    printf("G2: %.2f\n", alunos[i].g2);
+                }
+            }
+
+        } else if (opcao != 0) {
+            printf("Opcao invalida!\n");
+        }
+
+    } while (opcao != 0);
+
+    printf("Programa encerrado.\n");
+    return 0;
+}
